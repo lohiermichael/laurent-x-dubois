@@ -71,6 +71,11 @@ async function sendEmail(name, email, telephone, website, message) {
 
 const googleAnalyticsMeasurementId = process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID;
 
+// Store SEO words in a local variable
+const SEOFilePath = path.join(__dirname, '/public/data/SEOWords.txt');
+let SEOFile = fs.readFileSync(SEOFilePath, 'utf8');
+let SEOWords = SEOFile.split('\n');
+
 // Routes
 
 // Main route: gallery with photos in the main folder
@@ -87,6 +92,7 @@ app.get('/', (_, response) => {
         imageNames,
         videosFolderExists,
         googleAnalyticsMeasurementId,
+        SEOWords,
     });
 });
 

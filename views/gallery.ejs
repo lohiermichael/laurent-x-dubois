@@ -8,10 +8,10 @@
     </video>
 <% } %>
 <div class="gallery-container">
-    <% imageNames.forEach(imageName => { %>
+    <% for( let imageIndex = 0; imageIndex < imageNames.length; imageIndex++ ) { %>
         <img
-            src="<%= galleryPath %>/images/<%= imageName %>"
-            alt="<%= galleryPath %>/images/<%= imageName %> not found">
-    <% }); %>
+            src="<%= galleryPath %>/images/<%= imageNames[imageIndex] %>"
+            alt="<%= SEOWords[imageIndex % SEOWords.length] %>">
+    <% } %>
 </div>
 <%- include('./partials/footer') %>

@@ -44,3 +44,9 @@ Run the container:
 
 Add your `ga_measurement_id` under a variable called:
 `GOOGLE_ANALYTICS_MEASUREMENT_ID` in the `.env` file and it should be good!
+
+### ... add new SEO words to the site
+
+These SEO words will appear in the `alt` field of images.
+You should create (or edit if already existing) a file `SEOWords.txt` under
+`/public/data`. There should be only one word by line.
