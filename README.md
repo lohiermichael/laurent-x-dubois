@@ -17,9 +17,14 @@ Build the container:
 
 ```COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose build```
 
-Run the container:
+Run the container in production:
 
 ```docker-compose up prod```
+
+OR, run the container as a development environment (any update will be applied
+without reloading):
+
+```docker-compose up dev```
 
 ### ... link my email to the contact page
 
