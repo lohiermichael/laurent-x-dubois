@@ -138,3 +138,9 @@ Terms
 public/img
 public/data
 public/galleries
+
+# Fichiers Laurent 07-2024
+.htaccess
+.well-known/
+public/.DS_Store
+tmp/
