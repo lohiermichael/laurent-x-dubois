@@ -157,7 +157,7 @@ app.get('/thanks', (_, response) => {
 });
 
 // CV route
-app.get('/cv', (_, response) => {
+app.get('/CV', (_, response) => {
     response.sendFile(
         path.join(__dirname, '/public/data/CVLaurentDuboisPhotography.pdf')
     );
