@@ -170,6 +170,16 @@ app.get('/tarifs', (_, response) => {
     );
 });
 
+// CGV Wedding
+app.get('/CGV_wedding', (_, res) => {
+    res.redirect('https://delivery.laurentxdubois.com/ivfz');
+});
+
+// CGV Photoshoot
+app.get('/CGV_photoshoot', (_, res) => {
+    res.redirect('https://delivery.laurentxdubois.com/w7m0');
+});
+
 GALLERY_NAMES = fs.readdirSync(GALLERIES_FOLDER).reverse();
 
 // Secret route with the list of all galleries
