@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="keywords"
+        content="
+            Laurent X. Dubois, photographe, mode, portrait, Paris, France,
+            corporate, &eacute;v&eacute;nementiel, mariage, grossesse,
+            particulier, soir&eacute;es, produits, culinaire"/>
+    <meta
+        name="descriptif"
+        content="
+            Laurent X. Dubois, photographe de mode et portraits international,
+            bas&eacute; &agrave; Paris, France.">
+    <title>Laurent X. Dubois </title>
+    <link
+        href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400|
+              Marcellus+SC|Lato:100,300,400,700|Quicksand:300,400|
+              Source+Code+Pro:200,300,400|Open+Sans:400,300|Roboto:400,100,300"
+        rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/site-icon.jpg" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="module" src="/js/menu-open.js"></script>
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=<%= googleAnalyticsMeasurementId %>">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag(
+            'config',
+            '<%= googleAnalyticsMeasurementId %>',
+            {'cookie_flags': 'SameSite=None;Secure'}
+        );
+    </script>
+    <script type="module" src="/js/header.js" defer></script>
+    <% if (locals.otherCSSFile) { %>
+        <link rel="stylesheet" href="/css/<%= otherCSSFile %>.css" />
+    <% } %>
+    <% if (locals.otherJSFile) { %>
+        <script type="module" src="/js/<%= otherJSFile %>.js" defer></script>
+    <% } %>
+    <script type="module" src="/js/menu-open.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="burger-button">
+            <div class="burger"></div>
+        </div>
+        <ul class="menu-nav">
+            <li class="menu-nav__item menu-nav__item-with-dropdown">
+                <a href="#" onclick="return false;" class="menu-nav__link">
+                    fashion
+                </a>
+                <ul class="menu-nav__dropdown-menu">
+                    <li class="menu-nav__dropdown-item">
+                        <a href="/fashion-week-1" class="menu-nav__link">
+                            fashion week i
+                        </a>
+                    </li>
+                    <li class="menu-nav__dropdown-item">
+                        <a href="/fashion-week-2" class="menu-nav__link">
+                            fashion week ii
+                        </a>
+                    </li>
+                    <li class="menu-nav__dropdown-item">
+                        <a href="/portraits" class="menu-nav__link">
+                            portraits
+                        </a>
+                    </li>
+                    <li class="menu-nav__dropdown-item">
+                        <a href="/projects" class="menu-nav__link" >
+                            projects
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-nav__item">
+                <a href="/agency-test" class="menu-nav__link">
+                    agency test
+                </a>
+            </li>
+            <li class="menu-nav__item">
+                <a href="/editorial" class="menu-nav__link">
+                    editorial
+                </a>
+            </li>
+            <li class="menu-nav__item">
+                <a href="/contact" class="menu-nav__link">
+                    contact & info
+                </a>
+            </li>
+        </ul>
+        <div class="logo">
+            <a href="/">
+                <h1 class="logo__title">Laurent X. Dubois</h1>
+                <h2 class="logo__subtitle">Paris</h2>
+            </a>
+            <div class="logo__social-media">
+                <a href="https://www.instagram.com/laurentxdubois/" target="_blank">instagram
+                </a>
+                -
+                <a href="https://www.youtube.com/channel/UCBKdjX7ZbqgZmNYWaU3izsw" target="_blank">youtube
+                </a>
+            </div>
+        </div>
+    </header>

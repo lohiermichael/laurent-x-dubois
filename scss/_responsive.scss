@@ -1,0 +1,20 @@
+// For tablets
+@mixin media-tablets-min {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+// For small laptops
+@mixin media-small-desktop-min {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+// For laptops and desktops
+@mixin media-large-desktop-min {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}

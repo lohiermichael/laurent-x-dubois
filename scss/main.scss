@@ -1,0 +1,325 @@
+@import "./reset.scss";
+@import "./variables.scss";
+@import "./responsive.scss";
+
+body {
+  height: 100vh;
+  font-family: "Calibri", monospace;
+  background-color: #181818;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  color: inherit;
+}
+
+.header {
+
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+
+  @include media-small-desktop-min {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // Closed (as a burger)
+  .burger-button {
+
+    @include media-small-desktop-min {
+      display: none;
+    }
+
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    width: $button-side;
+    height: $button-side;
+    cursor: pointer;
+
+    .burger {
+      // middle bar
+      height: $button-side/7;
+      margin-inline: auto;
+      background-color: $primary-text-color;
+      border-radius: .4*$button-side;
+      position: relative;
+      top: 3*$button-side/7;
+
+      // lower and upper bars
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: $primary-text-color;
+        border-radius: .4*$button-side;
+        height: $button-side/7;
+        width: 100%;
+        transition: transform .5s ease-in-out;
+      }
+
+      &::before {
+        transform: translateY(-2*$button-side/7);
+      }
+
+      &::after {
+        transform: translateY(2*$button-side/7);
+      }
+
+      &.menu-open {
+        background: transparent;
+
+        &::before {
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .menu-nav {
+    // On phone screen, by default, the menu is not displayed, only on click
+    // it changes
+    display: none;
+
+    @include media-small-desktop-min {
+      display: flex;
+      padding: 1.5rem;
+      color: $primary-text-color;
+    }
+
+    &.menu-open {
+      margin-top: 4rem;
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      color: $primary-text-color;
+    }
+
+    &__item {
+      width: fit-content;
+    }
+
+    &__link {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 1.2rem;
+      font-variant: small-caps;
+      letter-spacing: 0.188rem;
+      padding: 1rem;
+      width: 12rem;
+      display: inline-block;
+      white-space: nowrap;
+
+      &:hover {
+        color: $hover-text-color;
+        background-color: $hover-background-color;
+      }
+
+      @include media-small-desktop-min {
+        font-size: 0.938rem;
+        width: fit-content;
+      }
+    }
+
+    &__item-with-dropdown>.menu-nav__link.dropdown-open {
+      color: $hover-text-color;
+      background-color: $hover-background-color;
+    }
+
+    &__item-with-dropdown:hover {
+
+      &>a {
+        @include media-small-desktop-min {
+          color: $hover-text-color;
+          background-color: $hover-background-color;
+        }
+      }
+
+      &>.menu-nav__dropdown-menu {
+        @include media-small-desktop-min {
+          animation: translateX 300ms ease-in-out forwards;
+          transform-origin: top center;
+          display: flex;
+          flex-direction: column;
+          color: $primary-text-color;
+          background-color: $dropdown-background-color;
+        }
+      }
+    }
+
+    &__dropdown-menu {
+      display: none;
+    }
+
+    &__dropdown-menu {
+      @include media-small-desktop-min {
+        position: absolute;
+      }
+    }
+
+    &__dropdown-item>.menu-nav__link {
+      @include media-small-desktop-min {
+        width: 12rem;
+      }
+    }
+
+    &__dropdown-menu.dropdown-open {
+      animation: translateX 300ms ease-in-out forwards;
+      transform-origin: top center;
+      display: flex;
+      flex-direction: column;
+      color: $primary-text-color;
+      background-color: $dropdown-background-color;
+    }
+
+    @keyframes translateX {
+      0% {
+        opacity: 0;
+        transform: translateX(-5rem);
+      }
+
+      80% {
+        transform: translateX(1rem);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0rem);
+      }
+    }
+  }
+
+  .logo {
+    margin-top: 2rem;
+    margin-left: 2*$button-side;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media-small-desktop-min {
+      margin-left: 0;
+      margin-right: 4rem;
+    }
+
+    &.menu-open {
+      display: none;
+    }
+
+    &__title {
+      color: $primary-text-color;
+      font-family: 'Lato', sans-serif;
+      font-variant: small-caps;
+      font-weight: 300;
+      letter-spacing: 0.188rem;
+      font-size: 1.563rem;
+      white-space: nowrap;
+    }
+
+    &__subtitle {
+      color: $secondary-text-color;
+      font-family: 'Quicksand', sans-serif;
+      font-variant: small-caps;
+      font-weight: 200;
+      font-size: 1.125rem;
+      letter-spacing: 0.188rem;
+      text-align: center;
+    }
+
+    &__social-media {
+      color: $primary-text-color;
+      font-family: 'Quicksand', sans-serif;
+      font-variant: small-caps;
+      font-weight: 100;
+      font-size: 1.125rem;
+      letter-spacing: 0.188rem;
+      text-align: center;
+      white-space: nowrap;
+
+      &>a {
+        &:hover {
+          color: $hover-text-color;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+
+  &.menu-open {
+    display: none;
+  }
+
+  &__list-item {
+    color: $primary-text-color;
+
+    &:nth-child(1) {
+      margin-bottom: .5rem;
+
+      @include media-tablets-min {
+        margin: 1rem;
+      }
+    }
+
+    @include media-tablets-min {
+      margin: 1rem;
+    }
+  }
+
+  &__separator {
+    color: $primary-text-color;
+
+    @include media-tablets-min {
+      margin-inline: 1rem;
+    }
+  }
+
+  &__paragraph {
+    color: $secondary-text-color;
+    font-size: .9rem;
+  }
+
+  &__contact-item {
+    &>a {
+      font-size: .9rem;
+      color: $primary-text-color;
+      display: block;
+
+      &:hover {
+        color: $hover-text-color;
+      }
+    }
+
+  }
+
+  &__contact-list {
+
+    @include media-tablets-min {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__rights {
+    margin-top: .7rem;
+    font-size: .9rem;
+
+    @include media-tablets-min {
+      margin-top: 0;
+    }
+  }
+}
