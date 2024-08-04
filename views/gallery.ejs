@@ -1,0 +1,17 @@
+<%- include('./partials/header', {otherCSSFile: "gallery", otherJSFile: "gallery" }) %>
+<% if (videosFolderExists) { %>
+    <video
+        class="background-video"
+        poster="<%= galleryPath %>/videos/video.jpg"
+        autoplay muted loop playsinline>
+            <source src="<%= galleryPath %>/videos/video.mp4" type="video/mp4">
+    </video>
+<% } %>
+<div class="gallery-container">
+    <% for( let imageIndex = 0; imageIndex < imageNames.length; imageIndex++ ) { %>
+        <img
+            src="<%= galleryPath %>/images/<%= imageNames[imageIndex] %>"
+            alt="<%= SEOWords[imageIndex % SEOWords.length] %>">
+    <% } %>
+</div>
+<%- include('./partials/footer') %>

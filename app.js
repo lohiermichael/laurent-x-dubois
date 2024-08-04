@@ -3,6 +3,7 @@
 // ############################################################################
 
 import express from 'express';
+import fs from 'fs';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -18,10 +19,16 @@ dotenv.config();
 
 const app = express();
 
+const GALLERIES_FOLDER = path.join(__dirname, '/public/galleries/');
+let galleryPath = '';
+let imageNames = [];
+
 // Static files
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
+app.use('/data', express.static(path.join(__dirname, 'public/data')));
 app.use('/img', express.static(path.join(__dirname, 'public/img')));
 app.use('/js', express.static(path.join(__dirname, 'public/js')));
+app.use('/galleries', express.static(path.join(__dirname, 'public/galleries')));
 
 // Set views
 app.set('views', path.join(__dirname, 'views'));
@@ -33,12 +40,34 @@ app.set('view engine', 'ejs');
 
 const googleAnalyticsMeasurementId = process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID;
 
+// Store SEO words in a local variable
+const SEOFilePath = path.join(__dirname, '/public/data/SEOWords.txt');
+let SEOFile = fs.readFileSync(SEOFilePath, 'utf8');
+let SEOWords = SEOFile.split('\n');
+
 // ############################################################################
 // Routes
 // ############################################################################
 
-app.get('/', (_, res) => {
-  res.send('<p>Hello World!</p>');
+// Main route: gallery with photos in the main folder
+app.get('/', (_, response) => {
+
+    // Get all images in the file
+    galleryPath = path.join(GALLERIES_FOLDER, 'default');
+    imageNames = fs.readdirSync(path.join(galleryPath, 'images')).reverse();
+
+    let videosFolderExists = fs.existsSync(path.join(galleryPath, '/videos/'));
+
+    console.log(imageNames)
+    console.log(galleryPath)
+
+    response.render('gallery', {
+        galleryPath: '/galleries/default',
+        imageNames,
+        videosFolderExists,
+        googleAnalyticsMeasurementId,
+        SEOWords,
+    });
 });
 
 // Thanks route
