@@ -20,6 +20,7 @@ dotenv.config();
 const app = express();
 
 const GALLERIES_FOLDER = path.join(__dirname, '/public/galleries/');
+const GALLERY_NAMES = fs.readdirSync(GALLERIES_FOLDER).reverse();
 let galleryPath = '';
 let imageNames = [];
 
@@ -74,6 +75,30 @@ app.get('/', (_, response) => {
 app.get('/thanks', (_, response) => {
     response.render('thanks', { googleAnalyticsMeasurementId, });
 });
+
+// Gallery routes: gallery with photos of one of the folders of GALLERY_NAMES
+app.get('/:galleryName', (request, response) => {
+    let galleryName = request.params['galleryName'];
+    if (!GALLERY_NAMES.includes(galleryName)) {
+        response.status(404).render('404', { googleAnalyticsMeasurementId, })
+    } else {
+        // Get all images in the file
+        galleryPath = path.join(GALLERIES_FOLDER, galleryName);
+        imageNames = fs.readdirSync(path.join(galleryPath, 'images')).reverse();
+
+        let videosFolderExists = fs.existsSync(path.join(galleryPath, '/videos/'));
+
+        response.render(
+            'gallery',
+            {
+                galleryPath: `/galleries/${galleryName}`,
+                imageNames, videosFolderExists, googleAnalyticsMeasurementId,
+                SEOWords,
+            }
+        );
+    }
+});
+
 
 // Wild card
 app.get('*', (_, response) => {
