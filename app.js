@@ -41,6 +41,11 @@ app.get('/', (_, res) => {
   res.send('<p>Hello World!</p>');
 });
 
+// Thanks route
+app.get('/thanks', (_, response) => {
+    response.render('thanks', { googleAnalyticsMeasurementId, });
+});
+
 // Wild card
 app.get('*', (_, response) => {
     response.render('404', { googleAnalyticsMeasurementId, })
