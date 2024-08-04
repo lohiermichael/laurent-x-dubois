@@ -1,0 +1,11 @@
+<%- include('./partials/header', {otherCSSFile: "all-galleries", otherJSFile: "all-galleries" }) %>
+<div class="galleries-list-container">
+    <ul class="galleries-list">
+        <% galleries.forEach(gallery => { %>
+            <li class="gallery-item">
+                <a href="/<%= gallery %>"><%= gallery %></a>
+            </li>
+        <% }) %>
+    </ul>
+</div>
+<%- include('./partials/footer') %>

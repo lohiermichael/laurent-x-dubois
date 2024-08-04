@@ -190,6 +190,14 @@ app.get('/thanks', (_, response) => {
     response.render('thanks', { googleAnalyticsMeasurementId, });
 });
 
+// Secret route with the list of all galleries
+app.get('/__all__', (_, response) => {
+    response.render('all-galleries', {
+        galleries: GALLERY_NAMES,
+        googleAnalyticsMeasurementId,
+    })
+});
+
 // ----------------------------------------------------------------------------
 // File routes
 // ----------------------------------------------------------------------------
@@ -222,6 +230,7 @@ app.get('/CGV_photoshoot', (_, res) => {
     res.redirect('https://delivery.laurentxdubois.com/w7m0');
 });
 
+// ----------------------------------------------------------------------------
 
 // Gallery routes: gallery with photos of one of the folders of GALLERY_NAMES
 app.get('/:galleryName', (request, response) => {
