@@ -71,6 +71,19 @@ app.get('/', (_, response) => {
     });
 });
 
+// Contact GET route: Empty form data returned
+app.get('/contact', (_, response) => {
+    response.render('contact', {
+        alertMsgPerInput: new Map(),
+        nameInput: '',
+        emailInput: '',
+        telephoneInput: '',
+        websiteInput: '',
+        messageInput: '',
+        googleAnalyticsMeasurementId,
+    });
+});
+
 // Thanks route
 app.get('/thanks', (_, response) => {
     response.render('thanks', { googleAnalyticsMeasurementId, });
