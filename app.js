@@ -190,6 +190,25 @@ app.get('/thanks', (_, response) => {
     response.render('thanks', { googleAnalyticsMeasurementId, });
 });
 
+// ----------------------------------------------------------------------------
+// File routes
+// ----------------------------------------------------------------------------
+
+// CV route
+app.get('/CV', (_, response) => {
+    response.sendFile(
+        path.join(__dirname, '/public/data/CVLaurentDuboisPhotography.pdf')
+    );
+});
+
+// Tariffs route
+app.get('/tarifs', (_, response) => {
+    response.sendFile(
+        path.join(__dirname, '/public/data/tarifs.pdf')
+    );
+});
+
+
 // Gallery routes: gallery with photos of one of the folders of GALLERY_NAMES
 app.get('/:galleryName', (request, response) => {
     let galleryName = request.params['galleryName'];
