@@ -115,9 +115,6 @@ app.get('/', (_, response) => {
 
     let videosFolderExists = fs.existsSync(path.join(galleryPath, '/videos/'));
 
-    console.log(imageNames)
-    console.log(galleryPath)
-
     response.render('gallery', {
         galleryPath: '/galleries/default',
         imageNames,
