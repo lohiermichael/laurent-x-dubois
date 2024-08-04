@@ -2,9 +2,10 @@
 // Imports
 // ############################################################################
 
+// Library imports
+import dotenv from 'dotenv';
 import express from 'express';
 import fs from 'fs';
-import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
