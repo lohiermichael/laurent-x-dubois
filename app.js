@@ -208,6 +208,20 @@ app.get('/tarifs', (_, response) => {
     );
 });
 
+// ----------------------------------------------------------------------------
+// Redirect routes
+// ----------------------------------------------------------------------------
+
+// CGV Wedding
+app.get('/CGV_wedding', (_, res) => {
+    res.redirect('https://delivery.laurentxdubois.com/ivfz');
+});
+
+// CGV Photo shoot
+app.get('/CGV_photoshoot', (_, res) => {
+    res.redirect('https://delivery.laurentxdubois.com/w7m0');
+});
+
 
 // Gallery routes: gallery with photos of one of the folders of GALLERY_NAMES
 app.get('/:galleryName', (request, response) => {
