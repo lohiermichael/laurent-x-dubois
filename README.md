@@ -117,6 +117,5 @@ file for details.
 
 ## 🤝 Contact
 
-For questions or support, please use the contact form on the website or open an
-issue in this repository.
+For questions or support, please open an issue in this repository.
 
