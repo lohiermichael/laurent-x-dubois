@@ -2,7 +2,12 @@
 
 # Laurent X. Dubois (website)
 
-  ![Website Preview](public/gif/website-preview.gif)
+  <img
+    src="public/gif/website-preview.gif"
+    alt="Website Preview"
+    width="800"
+    style="max-width: 100%;">
+
 
   [🌐 View Live Website](https://your-portfolio-url.com)
 
