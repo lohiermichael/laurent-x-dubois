@@ -117,5 +117,6 @@ file for details.
 
 ## 🤝 Contact
 
-For questions or support, please open an issue in this repository.
+For questions or support, please contact me by email (lohiermichael@gmail.com)
+open an issue in this repository.
 
