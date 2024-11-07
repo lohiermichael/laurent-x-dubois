@@ -40,19 +40,19 @@ JavaScript
 
 1. **Build the Container**
 ```bash
-COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose build
+COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build
 ```
 
 2. **Launch the Application**
 
 Production Mode:
 ```bash
-docker-compose up prod
+docker compose up prod
 ```
 
 Development Mode (with hot reload):
 ```bash
-docker-compose up dev
+docker compose up dev
 ```
 
 ## 📧 Email Integration
