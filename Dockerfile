@@ -1,16 +1,16 @@
 # Use the official Node.js image from the Docker Hub
-FROM node:22-alpine as base
+FROM node:22-alpine AS base
 
 WORKDIR /work/
 COPY ./package*.json ./
 EXPOSE 3000
 
-FROM base as production
+FROM base AS production
 RUN npm ci
 COPY . /work/
 CMD ["node", "app.js"]
 
-FROM base as development
+FROM base AS development
 RUN npm install -g nodemon && npm install
 COPY . /work/
 CMD ["sh", "run_dev.sh"]
