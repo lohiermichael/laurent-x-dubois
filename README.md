@@ -31,7 +31,6 @@ JavaScript
 
 #### 1. Prerequisites
 - Docker (version 20.10.0 or higher)
-- Docker Compose (version 2.0.0 or higher)
 - Gmail account (for contact form)
 
 #### 2. Gallery Management Setup (Required)
