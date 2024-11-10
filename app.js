@@ -3,21 +3,18 @@
 // ############################################################################
 
 // Library imports
-import bodyParser from 'body-parser';
-import dotenv from 'dotenv';
-import express from 'express';
-import { check, validationResult } from 'express-validator';
-import fs from 'fs';
-import nodeMailer from 'nodemailer';
-import path from 'path';
-import { fileURLToPath } from 'url';
+const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+const express = require('express');
+const { check, validationResult } = require('express-validator');
+const fs = require('fs');
+const nodeMailer = require('nodemailer');
+const path = require('path');
+
 
 // ############################################################################
 // Configuration
 // ############################################################################
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 dotenv.config();
 
