@@ -144,3 +144,4 @@ public/galleries
 .well-known/
 public/.DS_Store
 tmp/
+.DS_Store
