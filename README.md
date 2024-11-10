@@ -108,4 +108,4 @@ file for details.
 
 ## 🤝 Contact
 For questions or support, please contact me by email (lohiermichael@gmail.com)
-or open an issue in this repository.
+or open an issue in this repository. Thank you!
