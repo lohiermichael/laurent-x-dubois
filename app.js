@@ -67,31 +67,83 @@ async function sendEmail(name, email, telephone, website, message) {
             pass: process.env.SENDER_GMAIL_PASSWORD,
             }
     });
+    
     const mailOptions = {
         from: process.env.SENDER_GMAIL_USER,
         to: process.env.RECIPIENT_EMAIL,
-        subject: 'NOUVEAU CONTACT sur LaurentXDubois',
+        subject: '📬 Nouveau contact - Site LaurentXDubois.com',
         html: `
-        Bonjour Laurent, <br><br>
-        Tu as un nouveau message sur laurentxdubois.com: <br><br>
-        <hr>
-        <h3>Name:</h3> ${name} <br><br>
-        <hr>
-        <h3>Email:</h3> ${email} <br><br>
-        <hr>
-        <h3>Telephone:</h3> ${telephone} <br><br>
-        <hr>
-        <h3>Website:</h3> ${website} <br><br>
-        <hr>
-        <h3>Message:</h3><br>
-        ${message} <br><br>
-        <hr>
-        <br><br>
-        Pense à le recontacter! <br><br>
-
-        Le bot de laurentxdubois.com
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Nouveau contact</title>
+            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        </head>
+        <body style="margin: 0; padding: 0; background-color: #ffffff; font-family: 'Lato', sans-serif;">
+            <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 10px; margin-top: 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <!-- Header avec Logo/Nom -->
+                <div style="text-align: center; padding: 20px; background-color: #181818; border-radius: 8px; margin-bottom: 20px;">
+                    <h1 style="color: #ffffff; margin: 0; font-size: 24px;">Nouveau contact</h1>
+                    <p style="color: #888888; margin: 10px 0 0 0;">laurentxdubois.com</p>
+                </div>
+    
+                <!-- Introduction -->
+                <div style="margin-bottom: 30px; color: #181818;">
+                    <p style="font-size: 16px; line-height: 1.5;">Bonjour Laurent,</p>
+                    <p style="font-size: 16px; line-height: 1.5;">Un nouveau message a été envoyé via votre portfolio.</p>
+                </div>
+    
+                <!-- Informations du Contact -->
+                <div style="background-color: #f8f8f8; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <!-- Nom -->
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="color: #181818; margin: 0; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Nom</h3>
+                        <p style="color: #333333; margin: 5px 0 0 0; font-size: 16px;">${name}</p>
+                    </div>
+    
+                    <!-- Email -->
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="color: #181818; margin: 0; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Email</h3>
+                        <p style="color: #333333; margin: 5px 0 0 0; font-size: 16px;"><a href="mailto:${email}" style="color: #888888; text-decoration: none;" onmouseover="this.style.color='#9b0e0e'" onmouseout="this.style.color='#888888'">${email}</a></p>
+                    </div>
+    
+                    <!-- Téléphone -->
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="color: #181818; margin: 0; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Téléphone</h3>
+                        <p style="color: #333333; margin: 5px 0 0 0; font-size: 16px;"><a href="tel:${telephone}" style="color: #888888; text-decoration: none;" onmouseover="this.style.color='#9b0e0e'" onmouseout="this.style.color='#888888'">${telephone}</a></p>
+                    </div>
+    
+                    <!-- Site Web -->
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="color: #181818; margin: 0; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Site Web</h3>
+                        <p style="color: #333333; margin: 5px 0 0 0; font-size: 16px;"><a href="${website}" style="color: #888888; text-decoration: none;" onmouseover="this.style.color='#9b0e0e'" onmouseout="this.style.color='#888888'">${website}</a></p>
+                    </div>
+                </div>
+    
+                <!-- Message -->
+                <div style="background-color: #f8f8f8; padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+                    <h3 style="color: #181818; margin: 0; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Message</h3>
+                    <div style="color: #333333; margin: 10px 0 0 0; font-size: 16px; line-height: 1.6; white-space: pre-wrap;">${message}</div>
+                </div>
+    
+                <!-- Call to Action -->
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <a href="mailto:${email}" style="display: inline-block; padding: 12px 24px; background-color: #181818; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: bold;">Répondre au message</a>
+                </div>
+    
+                <!-- Footer -->
+                <div style="text-align: center; padding-top: 20px; border-top: 1px solid #e2e2e2;">
+                    <p style="color: #666666; font-size: 14px; margin: 0;">Message automatique envoyé depuis</p>
+                    <p style="color: #666666; font-size: 14px; margin: 5px 0 0 0;">laurentxdubois.com</p>
+                </div>
+            </div>
+        </body>
+        </html>
         `,
     };
+    
 
     try {
         await transporter.sendMail(mailOptions);
