@@ -11,6 +11,7 @@ const fs = require('fs');
 const nodeMailer = require('nodemailer');
 const path = require('path');
 
+const seoUtils = require('./public/js/utils/seo');
 
 // ############################################################################
 // Configuration
@@ -24,6 +25,9 @@ const GALLERIES_FOLDER = path.join(__dirname, '/public/galleries/');
 const GALLERY_NAMES = fs.readdirSync(GALLERIES_FOLDER).reverse();
 let galleryPath = '';
 let imageNames = [];
+
+// Make utils available to all templates
+app.locals.seoUtils = seoUtils;
 
 // Static files
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
@@ -291,7 +295,9 @@ app.get('/:galleryName', (request, response) => {
             'gallery',
             {
                 galleryPath: `/galleries/${galleryName}`,
-                imageNames, videosFolderExists, googleAnalyticsMeasurementId,
+                imageNames,
+                videosFolderExists,
+                googleAnalyticsMeasurementId,
             }
         );
     }

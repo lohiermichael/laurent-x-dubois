@@ -11,6 +11,10 @@
     <% for( let imageIndex = 0; imageIndex < imageNames.length; imageIndex++ ) { %>
         <img
             src="<%= galleryPath %>/images/<%= imageNames[imageIndex] %>"
+            alt="<%= seoUtils.enrichAltFromGalleryContext(
+                seoUtils.generateAltFromFilename(imageNames[imageIndex]),
+                galleryPath
+            ) %>">
     <% } %>
 </div>
 <%- include('./partials/footer') %>
