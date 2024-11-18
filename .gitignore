@@ -138,8 +138,6 @@ Terms
 public/img
 public/data
 public/galleries
-# static SEO file as exception
-!public/data/SEOWords.txt
 
 
 # Fichiers Laurent 07-2024

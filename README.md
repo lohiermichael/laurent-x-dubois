@@ -48,18 +48,7 @@ To add gallery to navigation menu, update:
 src/views/partials/header.ejs
 ```
 
-
-#### 3. SEO Configuration
-1. Create `/public/data/SEOWords.txt`
-2. Add keywords (one per line):
-```
-keyword1
-keyword2
-keyword3
-```
-
-
-#### 4. Email Integration
+#### 3. Email Integration
 1. Generate Gmail application token following
    [Google's official instructions](https://support.google.com/accounts/answer/185833?hl=en)
 2. Add token to `.env` file:

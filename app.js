@@ -46,11 +46,6 @@ app.set('view engine', 'ejs');
 
 const googleAnalyticsMeasurementId = process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID;
 
-// Store SEO words in a local variable
-const SEOFilePath = path.join(__dirname, '/public/data/SEOWords.txt');
-let SEOFile = fs.readFileSync(SEOFilePath, 'utf8');
-let SEOWords = SEOFile.split('\n');
-
 // ############################################################################
 // E-mails
 // ############################################################################
@@ -169,7 +164,6 @@ app.get('/', (_, response) => {
         imageNames,
         videosFolderExists,
         googleAnalyticsMeasurementId,
-        SEOWords,
     });
 });
 
@@ -298,7 +292,6 @@ app.get('/:galleryName', (request, response) => {
             {
                 galleryPath: `/galleries/${galleryName}`,
                 imageNames, videosFolderExists, googleAnalyticsMeasurementId,
-                SEOWords,
             }
         );
     }
