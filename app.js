@@ -163,16 +163,22 @@ app.get('/', (_, response) => {
 
     let videosFolderExists = fs.existsSync(path.join(galleryPath, '/videos/'));
 
+    const { title, description } = seoUtils.pageMetadata.home;
+
     response.render('gallery', {
         galleryPath: '/galleries/default',
         imageNames,
         videosFolderExists,
         googleAnalyticsMeasurementId,
+        pageTitle: title,
+        pageDescription: description,
     });
 });
 
 // Contact GET route: Empty form data returned
 app.get('/contact', (_, response) => {
+    const { title, description } = seoUtils.pageMetadata.contact;
+
     response.render('contact', {
         alertMsgPerInput: new Map(),
         nameInput: '',
@@ -181,6 +187,8 @@ app.get('/contact', (_, response) => {
         websiteInput: '',
         messageInput: '',
         googleAnalyticsMeasurementId,
+        pageTitle: title,
+        pageDescription: description,
     });
 });
 
@@ -234,14 +242,25 @@ app.post(
 
 // Thanks route
 app.get('/thanks', (_, response) => {
-    response.render('thanks', { googleAnalyticsMeasurementId, });
+    const { title, description } = seoUtils.pageMetadata.thanks;
+
+    response.render(
+      'thanks', {
+      googleAnalyticsMeasurementId,
+      pageTitle: title,
+      pageDescription: description,
+    });
 });
 
 // Secret route with the list of all galleries
 app.get('/__all__', (_, response) => {
+    const { title, description } = seoUtils.pageMetadata.home;
+
     response.render('all-galleries', {
         galleries: GALLERY_NAMES,
         googleAnalyticsMeasurementId,
+        pageTitle: title,
+        pageDescription: description,
     })
 });
 
@@ -282,14 +301,23 @@ app.get('/CGV_photoshoot', (_, res) => {
 // Gallery routes: gallery with photos of one of the folders of GALLERY_NAMES
 app.get('/:galleryName', (request, response) => {
     let galleryName = request.params['galleryName'];
+
+    const { title, description } = seoUtils.pageMetadata.notFound;
+
     if (!GALLERY_NAMES.includes(galleryName)) {
-        response.status(404).render('404', { googleAnalyticsMeasurementId, })
+        response.status(404).render('404', {
+          googleAnalyticsMeasurementId,
+          pageTitle: title,
+          pageDescription: description,
+    })
     } else {
         // Get all images in the file
         galleryPath = path.join(GALLERIES_FOLDER, galleryName);
         imageNames = fs.readdirSync(path.join(galleryPath, 'images')).reverse();
 
         let videosFolderExists = fs.existsSync(path.join(galleryPath, '/videos/'));
+
+        const { title, description } = seoUtils.generateGalleryMetadata(galleryName);
 
         response.render(
             'gallery',
@@ -298,6 +326,8 @@ app.get('/:galleryName', (request, response) => {
                 imageNames,
                 videosFolderExists,
                 googleAnalyticsMeasurementId,
+                pageTitle: title,
+                pageDescription: description,
             }
         );
     }
@@ -306,7 +336,13 @@ app.get('/:galleryName', (request, response) => {
 
 // Wild card
 app.get('*', (_, response) => {
-    response.render('404', { googleAnalyticsMeasurementId, })
+    const { title, description } = seoUtils.pageMetadata.notFound;
+
+    response.render('404', {
+      googleAnalyticsMeasurementId,
+      pageTitle: title,
+      pageDescription: description,
+    })
 });
 
 const PORT = process.env.PORT || 3000;
