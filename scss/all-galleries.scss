@@ -1,6 +1,6 @@
-@import "./reset.scss";
-@import "./variables.scss";
-@import "./responsive.scss";
+@use "./reset.scss";
+@use "./variables.scss";
+@use "./responsive.scss";
 
 .galleries-list-container {
     margin-inline: 10%;
@@ -22,20 +22,20 @@
 
         .gallery-item {
             font-family: "Lato", sans-serif;
-            color: $primary-text-color;
+            color: variables.$primary-text-color;
             font-weight: 300;
             font-size: 1rem;
             font-variant: small-caps;
             font-style: italic;
 
             &:hover {
-                color: $hover-text-color;
+                color: variables.$hover-text-color;
             }
 
-            @include media-small-desktop-min {
+            @include responsive.media-small-desktop-min {
                 font-size: 1.2rem;
             }
-            @include media-large-desktop-min {
+            @include responsive.media-large-desktop-min {
                 font-size: 1.5rem;
             }
         }

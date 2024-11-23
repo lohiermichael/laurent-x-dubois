@@ -1,6 +1,6 @@
-@import "./reset.scss";
-@import "./variables.scss";
-@import "./responsive.scss";
+@use "./reset.scss";
+@use "./variables.scss";
+@use "./responsive.scss";
 
 body {
   height: 100vh;
@@ -20,52 +20,52 @@ a {
   padding-top: 1rem;
   padding-bottom: 3rem;
 
-  @include media-small-desktop-min {
+  @include responsive.media-small-desktop-min {
     display: flex;
     justify-content: space-between;
   }
 
   // Closed (as a burger)
   .burger-button {
-
-    @include media-small-desktop-min {
-      display: none;
-    }
-
     position: absolute;
     top: 1rem;
     left: 2rem;
-    width: $button-side;
-    height: $button-side;
+    width: variables.$button-side;
+    height: variables.$button-side;
     cursor: pointer;
+
+
+    @include responsive.media-small-desktop-min {
+      display: none;
+    }
 
     .burger {
       // middle bar
-      height: $button-side/7;
+      height: calc(#{variables.$button-side} / 7);
       margin-inline: auto;
-      background-color: $primary-text-color;
-      border-radius: .4*$button-side;
+      background-color: variables.$primary-text-color;
+      border-radius: calc(.4 * #{variables.$button-side});
       position: relative;
-      top: 3*$button-side/7;
+      top: calc(3 * #{variables.$button-side} / 7);
 
       // lower and upper bars
       &::before,
       &::after {
         content: '';
         position: absolute;
-        background-color: $primary-text-color;
-        border-radius: .4*$button-side;
-        height: $button-side/7;
+        background-color: variables.$primary-text-color;
+        border-radius: calc(.4 * #{variables.$button-side});
+        height: calc(#{variables.$button-side} / 7);
         width: 100%;
         transition: transform .5s ease-in-out;
       }
 
       &::before {
-        transform: translateY(-2*$button-side/7);
+        transform: translateY(calc(-2 * #{variables.$button-side} / 7));
       }
 
       &::after {
-        transform: translateY(2*$button-side/7);
+        transform: translateY(calc(2 * #{variables.$button-side} / 7));
       }
 
       &.menu-open {
@@ -87,10 +87,10 @@ a {
     // it changes
     display: none;
 
-    @include media-small-desktop-min {
+    @include responsive.media-small-desktop-min {
       display: flex;
       padding: 1.5rem;
-      color: $primary-text-color;
+      color: variables.$primary-text-color;
     }
 
     &.menu-open {
@@ -98,7 +98,7 @@ a {
       margin-left: 1rem;
       display: flex;
       flex-direction: column;
-      color: $primary-text-color;
+      color: variables.$primary-text-color;
     }
 
     &__item {
@@ -117,38 +117,38 @@ a {
       white-space: nowrap;
 
       &:hover {
-        color: $hover-text-color;
-        background-color: $hover-background-color;
+        color: variables.$hover-text-color;
+        background-color: variables.$hover-background-color;
       }
 
-      @include media-small-desktop-min {
+      @include responsive.media-small-desktop-min {
         font-size: 0.938rem;
         width: fit-content;
       }
     }
 
     &__item-with-dropdown>.menu-nav__link.dropdown-open {
-      color: $hover-text-color;
-      background-color: $hover-background-color;
+      color: variables.$hover-text-color;
+      background-color: variables.$hover-background-color;
     }
 
     &__item-with-dropdown:hover {
 
       &>a {
-        @include media-small-desktop-min {
-          color: $hover-text-color;
-          background-color: $hover-background-color;
+        @include responsive.media-small-desktop-min {
+          color: variables.$hover-text-color;
+          background-color: variables.$hover-background-color;
         }
       }
 
       &>.menu-nav__dropdown-menu {
-        @include media-small-desktop-min {
+        @include responsive.media-small-desktop-min {
           animation: translateX 300ms ease-in-out forwards;
           transform-origin: top center;
           display: flex;
           flex-direction: column;
-          color: $primary-text-color;
-          background-color: $dropdown-background-color;
+          color: variables.$primary-text-color;
+          background-color: variables.$dropdown-background-color;
         }
       }
     }
@@ -158,13 +158,13 @@ a {
     }
 
     &__dropdown-menu {
-      @include media-small-desktop-min {
+      @include responsive.media-small-desktop-min {
         position: absolute;
       }
     }
 
     &__dropdown-item>.menu-nav__link {
-      @include media-small-desktop-min {
+      @include responsive.media-small-desktop-min {
         width: 12rem;
       }
     }
@@ -174,8 +174,8 @@ a {
       transform-origin: top center;
       display: flex;
       flex-direction: column;
-      color: $primary-text-color;
-      background-color: $dropdown-background-color;
+      color: variables.$primary-text-color;
+      background-color: variables.$dropdown-background-color;
     }
 
     @keyframes translateX {
@@ -197,12 +197,12 @@ a {
 
   .logo {
     margin-top: 2rem;
-    margin-left: 2*$button-side;
+    margin-left: calc(2 * #{variables.$button-side});
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    @include media-small-desktop-min {
+    @include responsive.media-small-desktop-min {
       margin-left: 0;
       margin-right: 4rem;
     }
@@ -212,7 +212,7 @@ a {
     }
 
     &__title {
-      color: $primary-text-color;
+      color: variables.$primary-text-color;
       font-family: 'Lato', sans-serif;
       font-variant: small-caps;
       font-weight: 300;
@@ -222,7 +222,7 @@ a {
     }
 
     &__subtitle {
-      color: $secondary-text-color;
+      color: variables.$secondary-text-color;
       font-family: 'Quicksand', sans-serif;
       font-variant: small-caps;
       font-weight: 200;
@@ -232,7 +232,7 @@ a {
     }
 
     &__social-media {
-      color: $primary-text-color;
+      color: variables.$primary-text-color;
       font-family: 'Quicksand', sans-serif;
       font-variant: small-caps;
       font-weight: 100;
@@ -243,7 +243,7 @@ a {
 
       &>a {
         &:hover {
-          color: $hover-text-color;
+          color: variables.$hover-text-color;
         }
       }
     }
@@ -264,42 +264,42 @@ a {
   }
 
   &__list-item {
-    color: $primary-text-color;
+    color: variables.$primary-text-color;
 
     &:nth-child(1) {
       margin-bottom: .5rem;
 
-      @include media-tablets-min {
+      @include responsive.media-tablets-min {
         margin: 1rem;
       }
     }
 
-    @include media-tablets-min {
+    @include responsive.media-tablets-min {
       margin: 1rem;
     }
   }
 
   &__separator {
-    color: $primary-text-color;
+    color: variables.$primary-text-color;
 
-    @include media-tablets-min {
+    @include responsive.media-tablets-min {
       margin-inline: 1rem;
     }
   }
 
   &__paragraph {
-    color: $secondary-text-color;
+    color: variables.$secondary-text-color;
     font-size: .9rem;
   }
 
   &__contact-item {
     &>a {
       font-size: .9rem;
-      color: $primary-text-color;
+      color: variables.$primary-text-color;
       display: block;
 
       &:hover {
-        color: $hover-text-color;
+        color: variables.$hover-text-color;
       }
     }
 
@@ -307,7 +307,7 @@ a {
 
   &__contact-list {
 
-    @include media-tablets-min {
+    @include responsive.media-tablets-min {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -318,7 +318,7 @@ a {
     margin-top: .7rem;
     font-size: .9rem;
 
-    @include media-tablets-min {
+    @include responsive.media-tablets-min {
       margin-top: 0;
     }
   }

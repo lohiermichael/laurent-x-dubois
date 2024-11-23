@@ -1,6 +1,6 @@
-@import "./reset.scss";
-@import "./variables.scss";
-@import "./responsive.scss";
+@use "./reset.scss";
+@use "./variables.scss";
+@use "./responsive.scss";
 
 .error-container {
     display: flex;

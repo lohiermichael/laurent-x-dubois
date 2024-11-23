@@ -1,6 +1,6 @@
-@import "./reset.scss";
-@import "./variables.scss";
-@import "./responsive.scss";
+@use "./reset.scss";
+@use "./variables.scss";
+@use "./responsive.scss";
 
 
 .contact-infos-container {
@@ -16,7 +16,7 @@
     // height: 37.5rem;
     margin: auto;
 
-    @include media-tablets-min {
+    @include responsive.media-tablets-min {
         flex-direction: row;
         justify-content: space-between;
         gap: 3rem;
@@ -67,7 +67,7 @@
     }
 
     .infos {
-        @include media-tablets-min {
+        @include responsive.media-tablets-min {
             width: 25rem;
         }
 
@@ -111,7 +111,7 @@
         flex-direction: column;
         gap: 1rem;
 
-        @include media-tablets-min {
+        @include responsive.media-tablets-min {
             width: 28.75rem;
         }
 
@@ -172,7 +172,7 @@
     }
 
     .cv-link {
-        color: $hover-text-color
+        color: variables.$hover-text-color
     }
 
 }

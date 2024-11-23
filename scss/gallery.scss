@@ -1,6 +1,6 @@
-@import "./reset.scss";
-@import "./variables.scss";
-@import "./responsive.scss";
+@use "./reset.scss";
+@use "./variables.scss";
+@use "./responsive.scss";
 
 .background-video {
     width: 100vw;
@@ -17,7 +17,7 @@
 }
 
 .gallery-container {
-    color: $primary-text-color;
+    color: variables.$primary-text-color;
     width: 90%;
     margin-inline: auto;
     margin-block: 1rem;
@@ -44,7 +44,7 @@
         display: none;
     }
 
-    @include media-small-desktop-min {
+    @include responsive.media-small-desktop-min {
         height: 60vh;
         overflow-x: scroll;
         width: 95%;
@@ -57,12 +57,12 @@
 
         &.reveal {
             animation-name: revealAnimation;
-            animation-duration: $animation-duration;
+            animation-duration: variables.$animation-duration;
             animation-timing-function: ease-in-out;
 
         }
 
-        @include media-small-desktop-min {
+        @include responsive.media-small-desktop-min {
 
             transition: transform .3s ease-in-out;
             &:hover {
