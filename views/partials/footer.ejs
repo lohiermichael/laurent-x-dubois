@@ -1,35 +1,37 @@
 <footer class="footer">
     <ul class="footer__contact-list">
         <li>
-            <p class="footer__paragraph footer__list-item">For an inquiry,</p>
+            <p class="footer__paragraph footer__list-item"><%= t('components.footer.inquiry.text') %></p>
         </li>
         <li class="footer__contact-item">
-            <a href="/contact">contact me</a>
+            <a href="/contact"><%= t('components.footer.inquiry.contactLink') %></a>
         </li>
         <li class="footer__separator">-</li>
         <li class="footer__contact-item">
-            <a href="https://dailyfashionstyle.com/" target="_blank">fashion
+            <a href="https://dailyfashionstyle.com/" target="_blank">
+                <%= t('components.footer.links.fashion') %>
             </a>
         </li>
         <li class="footer__separator">-</li>
         <li class="footer__contact-item">
-            <a href="https://www.instagram.com/laurentxdubois/" target="_blank">instagram
+            <a href="https://www.instagram.com/laurentxdubois/" target="_blank">
+                <%= t('components.footer.links.instagram') %>
             </a>
         </li>
         <li class="footer__separator">-</li>
         <li class="footer__contact-item">
-            <a href="https://www.facebook.com/LaurentXDubois.Photo" target="_blank">facebook
+            <a href="https://www.facebook.com/LaurentXDubois.Photo" target="_blank">
+                <%= t('components.footer.links.facebook') %>
             </a>
         </li>
         <li class="footer__separator">-</li>
         <li class="footer__contact-item">
-            <a href="https://delivery.laurentxdubois.com/w7m0" target="_blank">T&Cs/CGV
+            <a href="https://delivery.laurentxdubois.com/w7m0" target="_blank">
+                <%= t('components.footer.links.terms') %>
             </a>
         </li>
-
     </ul>
-    <p class="footer__paragraph footer__rights">All rights reserved.</p>
+    <p class="footer__paragraph footer__rights"><%= t('components.footer.copyright') %></p>
 </footer>
 </body>
-
 </html>
