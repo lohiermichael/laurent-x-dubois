@@ -61,45 +61,45 @@
                 </a>
                 <ul class="menu-nav__dropdown-menu">
                     <li class="menu-nav__dropdown-item">
-                        <a href="/fashion-week-1" class="menu-nav__link">
+                        <a href="<%= getPageUrl('fashionWeek1') %>" class="menu-nav__link">
                             <%= t('components.navigation.menu.fashion.submenu.fashionWeek1') %>
                         </a>
                     </li>
                     <li class="menu-nav__dropdown-item">
-                        <a href="/fashion-week-2" class="menu-nav__link">
+                        <a href="<%= getPageUrl('fashionWeek2') %>" class="menu-nav__link">
                             <%= t('components.navigation.menu.fashion.submenu.fashionWeek2') %>
                         </a>
                     </li>
                     <li class="menu-nav__dropdown-item">
-                        <a href="/portraits" class="menu-nav__link">
+                        <a href="<%= getPageUrl('portraits') %>" class="menu-nav__link">
                             <%= t('components.navigation.menu.fashion.submenu.portraits') %>
                         </a>
                     </li>
                     <li class="menu-nav__dropdown-item">
-                        <a href="/projects" class="menu-nav__link">
+                        <a href="<%= getPageUrl('projects') %>" class="menu-nav__link">
                             <%= t('components.navigation.menu.fashion.submenu.projects') %>
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="menu-nav__item">
-                <a href="/agency-test" class="menu-nav__link">
+                <a href="<%= getPageUrl('agencyTest') %>" class="menu-nav__link">
                     <%= t('components.navigation.menu.agencyTest') %>
                 </a>
             </li>
             <li class="menu-nav__item">
-                <a href="/editorial" class="menu-nav__link">
+                <a href="<%= getPageUrl('editorial') %>" class="menu-nav__link">
                     <%= t('components.navigation.menu.editorial') %>
                 </a>
             </li>
             <li class="menu-nav__item">
-                <a href="/contact" class="menu-nav__link">
+                <a href="<%= getPageUrl('contact') %>" class="menu-nav__link">
                     <%= t('components.navigation.menu.contactAndInfo') %>
                 </a>
             </li>
         </ul>
         <div class="logo">
-            <a href="/">
+            <a href="<%= getPageUrl('home') %>">
                 <h1 class="logo__title"><%= t('components.header.title') %></h1>
                 <h2 class="logo__subtitle"><%= t('components.header.location') %></h2>
             </a>

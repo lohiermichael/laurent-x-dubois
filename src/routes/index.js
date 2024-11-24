@@ -3,14 +3,17 @@ const router = express.Router();
 
 const galleryRoutes = require('./galleryRoutes');
 const contactRoutes = require('./contactRoutes');
-
-// Split the pageRoutes into normal routes and error route
 const { mainRoutes, errorRoute } = require('./pageRoutes');
 
-// Register all routes in correct order
+// English routes - needs to be before French routes to properly handle /en prefix
+router.use('/en', mainRoutes);
+router.use('/en/contact', contactRoutes);
+router.use('/en', galleryRoutes);
+
+// French routes (default)
 router.use('/', mainRoutes);
+router.use('/contactez-nous', contactRoutes);
 router.use('/', galleryRoutes);
-router.use('/contact', contactRoutes);
 
 // Error route should be last
 router.use('*', errorRoute);

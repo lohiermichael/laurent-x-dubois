@@ -1,10 +1,12 @@
 const galleryService = require('../services/galleryService');
 const fs = require('fs').promises;
 const path = require('path');
+const { getGalleryFolder } = require('../utils/urlMapping');
 
 exports.renderGallery = async (req, res, next) => {
   try {
-    const galleryName = req.params.galleryName || '';
+    const language = req.language;
+    let galleryName = getGalleryFolder(req.params.galleryName, language) || '';
     const galleryPath = path.join(process.cwd(), 'public', 'galleries', galleryName);
     
     try {
