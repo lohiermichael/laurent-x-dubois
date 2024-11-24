@@ -12,6 +12,7 @@ const nodeMailer = require('nodemailer');
 const path = require('path');
 
 const seoUtils = require('./public/js/utils/seo');
+const { translations, getTranslation } = require('./public/js/utils/translations');
 
 // ############################################################################
 // Configuration
@@ -41,9 +42,26 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use((request, result, next) => {
     // Set current language based on URL
-    result.locals.currentLang = request.path.startsWith('/en') ? 'en' : 'fr';
+    const currentLang = request.path.startsWith('/en') ? 'en' : 'fr';
+    
     // Store the current path for the language switcher
-    result.locals.path = request.path.replace('/en', '') || '/';
+    const path = request.path.replace('/en', '') || '/';
+    
+    // Add translation helper to locals
+    result.locals.t = (key, replacements = {}) => {
+        // Get translation using the new direct path format
+        const translation = getTranslation(translations[currentLang], key) || key;
+        
+        // Handle replacements if any
+        return Object.entries(replacements).reduce((str, [key, value]) => {
+            return str.replace(new RegExp(`{{${key}}}`, 'g'), value);
+        }, translation);
+    };
+    
+    // Make these available to all templates
+    result.locals.currentLang = currentLang;
+    result.locals.path = path;
+    
     next();
 });
 
