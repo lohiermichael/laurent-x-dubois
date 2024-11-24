@@ -31,7 +31,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
     <link rel="manifest" href="/img/site.webmanifest">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script type="module" src="/js/menu-open.js"></script>
     <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=<%= googleAnalyticsMeasurementId %>">
@@ -47,13 +46,13 @@
         );
     </script>
     <script type="module" src="/js/header.js" defer></script>
+    <script type="module" src="/js/menu-open.js" defer></script>
     <% if (locals.otherCSSFile) { %>
         <link rel="stylesheet" href="/css/<%= otherCSSFile %>.css" />
     <% } %>
     <% if (locals.otherJSFile) { %>
         <script type="module" src="/js/<%= otherJSFile %>.js" defer></script>
     <% } %>
-    <script type="module" src="/js/menu-open.js"></script>
 </head>
 
 <body>
