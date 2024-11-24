@@ -11,7 +11,8 @@ const staticUrlMappings = {
   'tests-agence': 'agency-test',
   'editorial': 'editorial',
   'merci': 'thanks',
-  'a-propos': 'about'
+  'a-propos': 'about',
+  'projets': 'projects',
 };
 
 /**
