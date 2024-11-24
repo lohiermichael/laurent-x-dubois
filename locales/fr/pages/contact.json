@@ -1,0 +1,33 @@
+{
+  "info": {
+    "title": "Infos",
+    "bio": {
+      "title": "Bio",
+      "intro": "Photographe français basé à Paris.\nJe voyage dans le monde entier pour la photographie.\nN'hésitez pas à me contacter.",
+      "availabilities": {
+        "title": "Disponible pour :",
+        "items": [
+          "commercial",
+          "mode",
+          "intérieur",
+          "mariage",
+          "corporate",
+          "produit",
+          "événement"
+        ]
+      },
+      "outro": "Pour toute autre demande,\nn'hésitez pas à me contacter."
+    },
+    "personalContacts": {
+      "title": "Contacts Personnels",
+      "phone": "Tél : +33 6 12 33 09 64 (What'sApp)",
+      "email": "Mail : Hello@LaurentXDubois.com ou utilisez ce formulaire",
+      "cv": {
+        "text": "CV : ",
+        "link": "Télécharger ici",
+        "description": "(Portfolio COMPLET 5mo)"
+      }
+    }
+  }
+}
+

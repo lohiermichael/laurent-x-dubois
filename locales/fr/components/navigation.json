@@ -1,0 +1,16 @@
+{
+  "menu": {
+    "fashion": {
+      "title": "mode",
+      "submenu": {
+        "fashionWeek1": "fashion week i",
+        "fashionWeek2": "fashion week ii",
+        "portraits": "portraits",
+        "projects": "projets"
+      }
+    },
+    "agencyTest": "tests agence",
+    "editorial": "éditorial",
+    "contactAndInfo": "contact & info"
+  }
+}

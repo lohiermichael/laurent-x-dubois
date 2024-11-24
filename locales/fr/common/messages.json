@@ -1,0 +1,22 @@
+{
+  "validation": {
+    "required": {
+      "name": "Le nom est requis",
+      "email": "L'email est requis",
+      "message": "Le message est requis"
+    },
+    "invalid": {
+      "email": "Veuillez entrer un email valide"
+    }
+  },
+  "success": {
+    "emailSent": "Email envoyé avec succès !",
+    "thanks": {
+      "main": "Merci de nous avoir contacté !",
+      "sub": "Nous vous répondrons dans les plus brefs délais"
+    }
+  },
+  "error": {
+    "server": "Erreur serveur :("
+  }
+}

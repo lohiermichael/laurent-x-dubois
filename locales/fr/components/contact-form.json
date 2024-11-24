@@ -1,0 +1,27 @@
+{
+  "title": "Contact",
+  "instruction": "Veuillez remplir le formulaire suivant :",
+  "fields": {
+    "name": {
+      "label": "*Nom :",
+      "placeholder": "Jean Dupont"
+    },
+    "email": {
+      "label": "*E-mail :",
+      "placeholder": "jean.dupont@gmail.com"
+    },
+    "telephone": {
+      "label": "Tél :",
+      "placeholder": "+33678930482"
+    },
+    "website": {
+      "label": "Site web :",
+      "placeholder": "www.jean-dupont.com"
+    },
+    "message": {
+      "label": "*Message :",
+      "placeholder": "Je suis intéressé par vos services car..."
+    }
+  },
+  "submit": "OK"
+}
