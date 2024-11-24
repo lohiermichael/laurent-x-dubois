@@ -6,20 +6,24 @@ const {
 } = require('../utils/seo');
 
 class SeoService {
-  getMetadataForPath(path) {
+  getMetadataForPath(path, language = 'fr') {
     // Remove language prefix if present
-    const cleanPath = path.replace(/^\/[a-z]{2}/, '');
-    
+    const cleanPath = path.replace(/^\/en\//, '/');
+
     // Remove leading slash and get first segment
     const segment = cleanPath.split('/')[1] || 'home';
 
-    if (segment in pageMetadata) {
-      return pageMetadata[segment];
+
+    // Get metadata for the current language
+    const languageMetadata = pageMetadata[language];
+
+    if (segment in languageMetadata) {
+        return languageMetadata[segment];
     }
 
     // If it's a gallery path
     if (path !== '/galleries') {
-      return generateGalleryMetadata(segment);
+      return generateGalleryMetadata(segment, language);
     }
 
     // Default to home metadata
