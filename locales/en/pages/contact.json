@@ -1,0 +1,33 @@
+
+{
+  "info": {
+    "title": "Info",
+    "bio": {
+      "title": "Bio",
+      "intro": "French photographer based in Paris.\nI travel the world for photography.\nFeel free to contact me.",
+      "availabilities": {
+        "title": "Available for:",
+        "items": [
+          "commercial",
+          "fashion",
+          "interior",
+          "wedding",
+          "corporate",
+          "product",
+          "event"
+        ]
+      },
+      "outro": "For any other inquiries,\nfeel free to contact me."
+    },
+    "personalContacts": {
+      "title": "Personal Contacts",
+      "phone": "Tel: +33 6 12 33 09 64 (What'sApp)",
+      "email": "Mail: Hello@LaurentXDubois.com or use this form",
+      "cv": {
+        "text": "CV: ",
+        "link": "Download here",
+        "description": "(5mb FULL Portfolio)"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Contact",
+  "instruction": "Please fill in the following form:",
+  "fields": {
+    "name": {
+      "label": "*Name:",
+      "placeholder": "John Doe"
+    },
+    "email": {
+      "label": "*E-mail:",
+      "placeholder": "john.doe@gmail.com"
+    },
+    "telephone": {
+      "label": "Tel:",
+      "placeholder": "+33678930482"
+    },
+    "website": {
+      "label": "Website:",
+      "placeholder": "www.john-doe.com"
+    },
+    "message": {
+      "label": "*Message:",
+      "placeholder": "I am interested in your services because..."
+    }
+  },
+  "submit": "OK"
+}

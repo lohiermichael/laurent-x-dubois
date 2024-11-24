@@ -1,0 +1,13 @@
+{
+  "inquiry": {
+    "text": "For an inquiry,",
+    "contactLink": "contact me"
+  },
+  "links": {
+    "fashion": "fashion",
+    "instagram": "instagram",
+    "facebook": "facebook",
+    "terms": "T&Cs"
+  },
+  "copyright": "All rights reserved."
+}
