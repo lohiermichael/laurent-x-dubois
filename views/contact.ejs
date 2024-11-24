@@ -1,111 +1,126 @@
 <%- include('./partials/header', {otherCSSFile: "contact" , otherJSFile: "contact" }) %>
     <div class="contact-infos-container">
         <div class="infos">
-            <h1 class="infos__title">Infos</h1>
+            <h1 class="infos__title"><%= t('pages.contact.info.title') %></h1>
             <div class="bio">
-                <h2 class="bio__title">Bio</h2>
+                <h2 class="bio__title"><%= t('pages.contact.info.bio.title') %></h2>
                 <div class="bio__content">
-                    <p class="bio__intro contact-infos-container__text ">
-                        French photographer based in Paris. <br>
-                        I travel the world for photography. <br>
-                        Feel free to contact me.
+                    <p class="bio__intro contact-infos-container__text">
+                        <%- t('pages.contact.info.bio.intro').replace(/\n/g, '<br>') %>
                     </p>
                     <ul class="bio__availabilities contact-infos-container__text">
-                        <p>Available for:</p>
+                        <p><%= t('pages.contact.info.bio.availabilities.title') %></p>
                         <li>commercial</li>
-                        <li>fashion</li>
-                        <li>interior</li>
-                        <li>wedding</li>
-                        <li>corporate</li>
-                        <li>product</li>
-                        <li>event</li>
+                        <li><%= t('pages.contact.info.bio.availabilities.items.0') %></li>
+                        <li><%= t('pages.contact.info.bio.availabilities.items.1') %></li>
+                        <li><%= t('pages.contact.info.bio.availabilities.items.2') %></li>
+                        <li><%= t('pages.contact.info.bio.availabilities.items.3') %></li>
+                        <li><%= t('pages.contact.info.bio.availabilities.items.4') %></li>
+                        <li><%= t('pages.contact.info.bio.availabilities.items.5') %></li>
+                        <li><%= t('pages.contact.info.bio.availabilities.items.6') %></li>
                     </ul>
-                    <p class="bio__outro contact-infos-container__text ">
-                        For any other inquiries, <br>
-                        feel free to contact me.
+                    <p class="bio__outro contact-infos-container__text">
+                        <%- t('pages.contact.info.bio.outro').replace(/\n/g, '<br>') %>
                     </p>
                 </div>
             </div>
             <div class="personal-contacts">
-                <h2 class="personal-contacts__title">Personal Contacts</h2>
-                <ul class="personal-contacts__list contact-infos-container__text ">
+                <h2 class="personal-contacts__title"><%= t('pages.contact.info.personalContacts.title') %></h2>
+                <ul class="personal-contacts__list contact-infos-container__text">
                     <li>
-                        Tel:
-                        +33 6 12 33 09 64 (What'sApp)
+                        <%= t('pages.contact.info.personalContacts.phone') %>
                     </li>
                     <li>
-                        Mail:
-                        Hello@LaurentXDubois.com
-                        or use this form
+                        <%= t('pages.contact.info.personalContacts.email') %>
                     </li>
                     <li>
-                        CV:
+                        <%= t('pages.contact.info.personalContacts.cv.text') %>
                         <a href="/cv" class="cv-link" target="_blank">
-                            Download here
+                            <%= t('pages.contact.info.personalContacts.cv.link') %>
                         </a>
-                        (5mo FULL Portfolio)
+                        <%= t('pages.contact.info.personalContacts.cv.description') %>
                     </li>
                 </ul>
             </div>
         </div>
         <form action="/contact" method="post" class="contact-form">
-            <h1 class="contact-form__title">Contact</h1>
+            <h1 class="contact-form__title"><%= t('components.contact-form.title') %></h1>
             <h3 class="contact-infos-container__text">
-                Please fill in the following form:
+                <%= t('components.contact-form.instruction') %>
             </h3>
             <div class="contact-form__field">
-                <label for="name">*Name:</label>
+                <label for="name"><%= t('components.contact-form.fields.name.label') %></label>
                 <input class="contact-infos-container__text
                 <% if (alertMsgPerInput.has('name')) { %>
                 with-alert
-                <% } %>" value="<%= nameInput %>" type="text" placeholder="John Doe" name="name">
+                <% } %>" 
+                value="<%= nameInput %>" 
+                type="text" 
+                placeholder="<%= t('components.contact-form.fields.name.placeholder') %>" 
+                name="name">
                 <% if (alertMsgPerInput.has('name')) { %>
                     <p class="alert-message">
                         <i>
-                            <%= alertMsgPerInput.get('name') %>
+                            <%= t('common.messages.validation.required.name') %>
                         </i>
                     </p>
                 <% } %>
             </div>
             <div class="contact-form__field">
-                <label for="email">*E-mail:</label>
+                <label for="email"><%= t('components.contact-form.fields.email.label') %></label>
                 <input class="contact-infos-container__text
                 <% if (alertMsgPerInput.has('email')) { %>
                 with-alert
-                <% } %>" value="<%= emailInput %>" type="text" placeholder="john.doe@gmail.com" name="email">
+                <% } %>" 
+                value="<%= emailInput %>" 
+                type="text" 
+                placeholder="<%= t('components.contact-form.fields.email.placeholder') %>" 
+                name="email">
                 <% if (alertMsgPerInput.has('email')) { %>
                     <p class="alert-message">
                         <i>
-                            <%= alertMsgPerInput.get('email') %>
+                            <%= alertMsgPerInput.get('email').includes('valid') ? 
+                                t('common.messages.validation.invalid.email') : 
+                                t('common.messages.validation.required.email') %>
                         </i>
                     </p>
-                    <% } %>
+                <% } %>
             </div>
             <div class="contact-form__field">
-                <label for="telephone">Tel:</label>
-                <input class="contact-infos-container__text" value="<%= telephoneInput %>" type="tel"
-                    placeholder="+33678930482" name="telephone">
+                <label for="telephone"><%= t('components.contact-form.fields.telephone.label') %></label>
+                <input class="contact-infos-container__text" 
+                    value="<%= telephoneInput %>" 
+                    type="tel"
+                    placeholder="<%= t('components.contact-form.fields.telephone.placeholder') %>" 
+                    name="telephone">
             </div>
             <div class="contact-form__field">
-                <label for="website">Website:</label>
-                <input class="contact-infos-container__text" value="<%= websiteInput %>" type="text"
-                    placeholder="www.john-doe.com" name="website">
+                <label for="website"><%= t('components.contact-form.fields.website.label') %></label>
+                <input class="contact-infos-container__text" 
+                    value="<%= websiteInput %>" 
+                    type="text"
+                    placeholder="<%= t('components.contact-form.fields.website.placeholder') %>" 
+                    name="website">
             </div>
             <div class="contact-form__field">
-                <label for="messge">*Message:</label>
-                <textarea name="message" id="" cols="20" rows="5" class="contact-infos-container__text
-                <% if (alertMsgPerInput.has('message')) { %>
-                with-alert
-                <% } %>" placeholder="I am interested in your services because..."><%= messageInput %></textarea>
+                <label for="message"><%= t('components.contact-form.fields.message.label') %></label>
+                <textarea name="message" 
+                    cols="20" 
+                    rows="5" 
+                    class="contact-infos-container__text
+                    <% if (alertMsgPerInput.has('message')) { %>
+                    with-alert
+                    <% } %>" 
+                    placeholder="<%= t('components.contact-form.fields.message.placeholder') %>"><%= messageInput %></textarea>
                 <% if (alertMsgPerInput.has('message')) { %>
                     <p class="alert-message">
                         <i>
-                            <%= alertMsgPerInput.get('message') %>
+                            <%= t('common.messages.validation.required.message') %>
                         </i>
                     </p>
-                    <% } %>
+                <% } %>
             </div>
-            <button type="submit">OK</button>
+            <button type="submit"><%= t('components.contact-form.submit') %></button>
         </form>
     </div>
-    <%- include('./partials/footer') %>
+<%- include('./partials/footer') %>
