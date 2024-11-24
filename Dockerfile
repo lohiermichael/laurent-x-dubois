@@ -7,7 +7,7 @@ EXPOSE 3000
 FROM base AS production
 RUN npm install
 COPY . /work/
-CMD ["node", "app.js"]
+CMD ["node", "server.js"]
 
 FROM base AS development
 RUN npm install -g nodemon && npm install

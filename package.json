@@ -2,10 +2,10 @@
   "name": "laurent_x_dubois",
   "version": "2.0.0",
   "description": "Laurent Dubois's portfolio website for photography",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js",
-    "start:dev": "nodemon --ext js,json,ejs,html,scss,jpg,png app.js",
+    "start": "node server.js",
+    "start:dev": "nodemon --ext js,json,ejs,html,scss,jpg,png server.js",
     "scss": "sass --watch scss:public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
