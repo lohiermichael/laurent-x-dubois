@@ -11,8 +11,8 @@ const fs = require('fs');
 const nodeMailer = require('nodemailer');
 const path = require('path');
 
-const seoUtils = require('./public/js/utils/seo');
-const { translations, getTranslation } = require('./public/js/utils/translations');
+const seoUtils = require('./src/utils/seo');
+const { translations, getTranslation } = require('./src/utils/translations');
 
 // ############################################################################
 // Configuration
@@ -66,7 +66,7 @@ app.use((request, result, next) => {
 });
 
 // Set views
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'ejs');
 
 // ############################################################################

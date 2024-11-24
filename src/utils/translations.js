@@ -3,7 +3,7 @@ const path = require('path');
 
 function loadTranslations(language) {
     const translations = {};
-    const rootPath = path.join(__dirname, '../../../');
+    const rootPath = path.join(__dirname, '../..');
     const componentsPath = path.join(rootPath, 'locales', language, 'components');
     const pagesPath = path.join(rootPath, 'locales', language, 'pages');
     const commonPath = path.join(rootPath, 'locales', language, 'common');
