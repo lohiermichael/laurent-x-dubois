@@ -1,6 +1,6 @@
 <div align="center">
 
-# Laurent X. Dubois (website)
+# Laurent X. Dubois (Portfolio Website)
 
 <img
   src="public/gif/website-preview.gif"
@@ -10,91 +10,136 @@
 
 [🌐 View Live Website](https://laurentxdubois.com)
 
-A modern, responsive photography portfolio website showcasing the photographs
-of Laurent X. Dubois.
+A modern photography portfolio website showcasing the work of
+Laurent X. Dubois, professional photographer based in Paris.
+
 </div>
 
 ## ✨ Features
-- **Pure Implementation**: Built without frontend frameworks or CSS packages,
-showcasing strong fundamental development skills
-- **Responsive Design**: Seamlessly adapts to all device sizes using pure CSS
-- **Custom Animations**: Smooth, performant animations implemented in vanilla
-JavaScript
-- **Contact Integration**: Secure email contact form with Gmail API
-- **Gallery Management**: Flexible image gallery system
-- **Analytics Ready**: Built-in Google Analytics integration
-- **SEO Optimized**: Customizable SEO word system for better visibility
+
+- **Pure Implementation**: Built without frontend frameworks, demonstrating
+strong vanilla development skills
+- **Modern Architecture**: Node.js/Express backend with EJS templating
+- **Docker Integration**: Production and development environments using Docker
+- **Responsive Design**: Mobile-first approach using pure SCSS
+- **Image Gallery System**: Dynamic gallery management with smooth transitions
+- **Contact System**: Secure email integration with Gmail API
+- **SEO Optimization**: Built-in SEO optimization with dynamic metadata
+- **Analytics**: Google Analytics integration
+- **Performance**: Optimized image loading and minimal dependencies
+- **Bilingual Support**: Full French and English language support with dynamic
+content switching
 
 ## 🚀 Getting Started
 
-### Required Setup
+### Prerequisites
 
-#### 1. Prerequisites
 - Docker (version 20.10.0 or higher)
+- Node.js v22+ (for local development)
 - Gmail account (for contact form)
 
-#### 2. Gallery Management Setup (Required)
-Create new gallery folder structure:
-```
-src/public/galleries/<gallery_name>/
-├── images/
-│   └── [your gallery images]
-└── videos/
-    └── video.mp4
-```
+### Environment Variables
 
-To add gallery to navigation menu, update:
-```
-src/views/partials/header.ejs
-```
+Create a `.env` file in the root directory:
 
-#### 3. Email Integration
-1. Generate Gmail application token following
-   [Google's official instructions](https://support.google.com/accounts/answer/185833?hl=en)
-2. Add token to `.env` file:
 ```env
-SENDER_GMAIL_PASSWORD=your_token_here
-```
-
-#### 4. Launch Application
-1. **Build the Container**
-```bash
-COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build
-```
-
-2. **Launch the Application**
-Production Mode:
-```bash
-docker compose up prod
-```
-Development Mode (with hot reload):
-```bash
-docker compose up dev
-```
-
-### Optional Features
-
-#### Google Analytics Setup (Optional)
-1. Add measurement ID to `.env`:
-```env
+SENDER_GMAIL_USER=your.email@gmail.com
+SENDER_GMAIL_PASSWORD=your_gmail_app_password
+RECIPIENT_EMAIL=recipient@example.com
 GOOGLE_ANALYTICS_MEASUREMENT_ID=your_ga_id
 ```
 
+### Development Setup
+
+1. **Clone the repository**
+```bash
+git clone <repository-url>
+cd laurent_x_dubois
+```
+
+2. **Build and start development container**
+```bash
+COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose up dev
+```
+
+The development server will start on port 3000 with hot-reload enabled.
+
+### Production Deployment
+
+1. **Build and start production container**
+```bash
+docker compose up prod
+```
+
+## 📂 Project Structure
+
+```
+.
+├── locales/                 # Language files (EN/FR)
+├── public/                  # Static assets
+│   ├── galleries/          # Photo galleries
+│   ├── js/                 # Client-side JavaScript
+│   └── img/                # Static images
+├── scss/                   # SCSS stylesheets
+├── src/
+│   ├── config/            # App configuration
+│   ├── controllers/       # Route controllers
+│   ├── middleware/        # Express middleware
+│   ├── routes/           # Express routes
+│   ├── services/         # Business logic
+│   ├── utils/            # Helper functions
+│   └── views/            # EJS templates
+└── docker-compose.yaml    # Docker configuration
+```
+
+## 🎨 Features Detail
+
+### Gallery Management
+
+Add new galleries by creating a directory structure:
+```
+public/galleries/<gallery_name>/
+├── images/
+│   └── [gallery images]
+└── videos/
+    └── video.mp4         # Optional background video
+```
+
+### Localization
+
+- Content is managed through JSON files in `locales/`
+- Supports English and French with easy addition of new languages
+- URL-based language switching (/en/*)
+
+### Styling
+
+- Custom SCSS architecture
+- Mobile-first responsive design
+- No CSS frameworks/dependencies
+
+### Contact Form
+
+- Secure email sending via Gmail API
+- Form validation
+- Custom email templates
+- Error handling
+
 ## 🛠️ Tech Stack
+
 - **Backend**: Node.js, Express
+- **View Engine**: EJS
 - **Styling**: SCSS
 - **Containerization**: Docker
+- **Email**: Nodemailer with Gmail
 - **Analytics**: Google Analytics
-- **Email**: Gmail API
 
-## 📝 Contributing
-Pull requests are welcome. For major changes, please open an issue first to
-discuss what you would like to change.
+## 📝 License
 
-## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE)
-file for details.
+This project is licensed under the MIT License with additional terms - see the
+[LICENSE](LICENSE) file for details.
 
 ## 🤝 Contact
-For questions or support, please contact me by email (lohiermichael@gmail.com)
-or open an issue in this repository. Thank you!
+
+For questions or support:
+- **Email**: lohiermichael@gmail.com
+- **Issues**: Open an issue in this repository
