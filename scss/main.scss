@@ -247,6 +247,46 @@ a {
         }
       }
     }
+
+    &__lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: variables.$button-side;
+      margin-top: calc(.5 * #{variables.$button-side});
+    }
+
+    &__lang-icon {
+      width: 2.1rem;
+      height: 1.35rem;
+      opacity: 0.7;
+      border-radius: 1px;
+    }
+
+    &__lang-link {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: variables.$secondary-text-color;
+      font-family: 'Quicksand', sans-serif;
+      font-variant: small-caps;
+      font-weight: 100;
+      font-size: .8rem;
+      letter-spacing: 0.188rem;
+
+      &.active {
+        color: variables.$primary-text-color;
+      }
+
+      &:hover {
+        color: variables.$hover-text-color;
+      }
+    }
+
+
+    &__lang-separator {
+      color: variables.$secondary-text-color;
+      font-weight: 100;
+    }
   }
 }
 

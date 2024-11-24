@@ -39,6 +39,13 @@ app.use('/galleries', express.static(path.join(__dirname, 'public/galleries')));
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use((request, result, next) => {
+    // Set current language based on URL
+    result.locals.currentLang = request.path.startsWith('/en') ? 'en' : 'fr';
+    // Store the current path for the language switcher
+    result.locals.path = request.path.replace('/en', '') || '/';
+    next();
+});
 
 // Set views
 app.set('views', path.join(__dirname, 'views'));

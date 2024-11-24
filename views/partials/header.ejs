@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta 
-        name="keywords" 
-        content="Laurent X. Dubois, photographe, mode, portrait, Paris, France, 
-        corporate, événementiel, mariage, grossesse, particulier, soirées, produits, 
+    <meta
+        name="keywords"
+        content="Laurent X. Dubois, photographe, mode, portrait, Paris, France,
+        corporate, événementiel, mariage, grossesse, particulier, soirées, produits,
         culinaire" />
-    <meta 
-        name="description" 
+    <meta
+        name="description"
         content="<%= locals.pageDescription || 'Photographe et vidéaste professionnel \
     à Paris, Laurent X. Dubois met son expertise au service de vos projets \
     commerciaux, corporate et portraits. Images haute qualité pour marques et \
@@ -106,16 +106,29 @@
             </li>
         </ul>
         <div class="logo">
-            <a href="/">
-                <h1 class="logo__title">Laurent X. Dubois</h1>
-                <h2 class="logo__subtitle">Paris</h2>
+          <a href="/">
+              <h1 class="logo__title">Laurent X. Dubois</h1>
+              <h2 class="logo__subtitle">Paris</h2>
+          </a>
+          <div class="logo__social-media">
+              <a href="https://www.instagram.com/laurentxdubois/" target="_blank">instagram
+              </a>
+              -
+              <a href="https://www.youtube.com/channel/UCBKdjX7ZbqgZmNYWaU3izsw" target="_blank">youtube
+              </a>
+          </div>
+          <div class="logo__lang-switcher">
+            <a href="<%= locals.currentLang === 'en' ? path.replace('/en', '') : path %>"
+               class="logo__lang-link <%= locals.currentLang === 'fr' ? 'active' : '' %>">
+              <img src="/img/logos/french-flag.svg" alt="French" class="logo__lang-icon">
+              <span>FR</span>
             </a>
-            <div class="logo__social-media">
-                <a href="https://www.instagram.com/laurentxdubois/" target="_blank">instagram
-                </a>
-                -
-                <a href="https://www.youtube.com/channel/UCBKdjX7ZbqgZmNYWaU3izsw" target="_blank">youtube
-                </a>
-            </div>
+            <span class="logo__lang-separator">|</span>
+            <a href="<%= locals.currentLang === 'en' ? path : '/en' + path %>"
+               class="logo__lang-link <%= locals.currentLang === 'en' ? 'active' : '' %>">
+              <img src="/img/logos/english-flag.svg" alt="English" class="logo__lang-icon">
+              <span>EN</span>
+            </a>
+          </div>
         </div>
     </header>

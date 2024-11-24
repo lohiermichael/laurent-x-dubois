@@ -290,6 +290,39 @@ a {
 .header .logo__social-media > a:hover {
   color: #ca1414;
 }
+.header .logo__lang-switcher {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: calc(0.5 * 1.5rem);
+}
+.header .logo__lang-icon {
+  width: 2.1rem;
+  height: 1.35rem;
+  opacity: 0.7;
+  border-radius: 1px;
+}
+.header .logo__lang-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #888888;
+  font-family: "Quicksand", sans-serif;
+  font-variant: small-caps;
+  font-weight: 100;
+  font-size: 0.8rem;
+  letter-spacing: 0.188rem;
+}
+.header .logo__lang-link.active {
+  color: #e6e6e6;
+}
+.header .logo__lang-link:hover {
+  color: #ca1414;
+}
+.header .logo__lang-separator {
+  color: #888888;
+  font-weight: 100;
+}
 
 .footer {
   display: flex;
