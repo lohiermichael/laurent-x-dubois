@@ -113,7 +113,7 @@
                 </a>
             </div>
             <div class="logo__lang-switcher">
-                <a href="<%= locals.currentLang === 'en' ? path.replace('/en', '') : path %>"
+                <a href="<%= languageUrls.fr %>"
                    class="logo__lang-link <%= locals.currentLang === 'fr' ? 'active' : '' %>">
                     <img src="/img/logos/french-flag.svg" 
                          alt="<%= t('components.header.languageSwitcher.frenchFlag') %>" 
@@ -121,7 +121,7 @@
                     <span><%= t('components.header.languageSwitcher.fr') %></span>
                 </a>
                 <span class="logo__lang-separator">|</span>
-                <a href="<%= locals.currentLang === 'en' ? path : '/en' + path %>"
+                <a href="<%= languageUrls.en %>"
                    class="logo__lang-link <%= locals.currentLang === 'en' ? 'active' : '' %>">
                     <img src="/img/logos/english-flag.svg" 
                          alt="<%= t('components.header.languageSwitcher.englishFlag') %>" 
