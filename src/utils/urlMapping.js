@@ -59,6 +59,14 @@ function getTranslatedUrl(url, targetLang) {
  * @returns {Object} URLs for both languages
  */
 function getLanguageUrls(url) {
+  // Special case for root URLs
+  if (url === '/' || url === '/en' || url === '') {
+    return {
+      fr: '/',
+      en: '/en'
+    };
+  }
+  
   return {
     fr: getTranslatedUrl(url, 'fr'),
     en: getTranslatedUrl(url, 'en')
