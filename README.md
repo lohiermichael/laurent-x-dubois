@@ -49,6 +49,11 @@ RECIPIENT_EMAIL=recipient@example.com
 GOOGLE_ANALYTICS_MEASUREMENT_ID=your_ga_id
 ```
 
+For getting Gmail credentials:
+[Google's official instructions for Gmail password](
+    https://support.google.com/accounts/answer/185833?hl=en
+)
+
 ### Development Setup
 
 1. **Clone the repository**
