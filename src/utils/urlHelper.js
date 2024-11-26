@@ -1,5 +1,3 @@
-// src/utils/urlHelper.js
-
 /**
  * URL mapping for navigation
  * Format: 'path': { fr: 'french-path', en: 'english-path' }
@@ -13,7 +11,7 @@ const navigationUrls = {
   projects: { fr: '/projets', en: '/en/projects' },
   agencyTest: { fr: '/tests-agence', en: '/en/agency-test' },
   editorial: { fr: '/editorial', en: '/en/editorial' },
-  contact: { fr: '/contactez-nous', en: '/en/contact' }
+  contact: { fr: '/contactez-nous', en: '/en/contact' },
 };
 
 /**
