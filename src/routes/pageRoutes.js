@@ -1,15 +1,13 @@
 const express = require('express');
-const mainRoutes = express.Router();
+const router = express.Router();
 const pageController = require('../controllers/pageController');
 
-// Normal routes
-mainRoutes.get('/', pageController.renderHomePage);
+// Home routes
+router.get('/', pageController.renderHomePage);
+router.get('/en', pageController.renderHomePage);
 
-// Handle both English and French thanks pages
-mainRoutes.get('/thanks', pageController.renderThanksPage);  // For English
-mainRoutes.get('/merci', pageController.renderThanksPage);   // For French
+// Thanks pages - language specific
+router.get('/merci', pageController.renderThanksPage);
+router.get('/en/thanks', pageController.renderThanksPage);
 
-// Create separate router for error handling
-const errorRoute = pageController.render404Page;
-
-module.exports = { mainRoutes, errorRoute };
+module.exports = router;

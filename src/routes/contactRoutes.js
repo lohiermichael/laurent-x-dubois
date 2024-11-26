@@ -40,8 +40,12 @@ const validateContact = [
     })
 ];
 
-// Routes
-router.get('/', contactController.renderContactPage);
-router.post('/', validateContact, contactController.handleContactForm);
+// French routes
+router.get('/contactez-nous', contactController.renderContactPage);
+router.post('/contactez-nous', validateContact, contactController.handleContactForm);
+
+// English routes
+router.get('/en/contact', contactController.renderContactPage);
+router.post('/en/contact', validateContact, contactController.handleContactForm);
 
 module.exports = router;
