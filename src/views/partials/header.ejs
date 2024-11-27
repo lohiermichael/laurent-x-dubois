@@ -47,6 +47,113 @@
     <% if (locals.otherJSFile) { %>
         <script type="module" src="/js/<%= otherJSFile %>.js" defer></script>
     <% } %>
+
+    <!-- Primary Meta Tags for Google Search -->
+    <meta
+      name="title"
+      content="<%= locals.pageTitle || t('common.meta.defaultTitle') %>">
+    <meta
+      name="description"
+      content="<%= locals.pageDescription || t('common.meta.defaultDescription') %>">
+    <meta
+      name="robots"
+      content="index, follow">
+    <meta
+      name="googlebot"
+      content="index, follow">
+    <link rel="canonical" href="https://laurentxdubois.com<%= path %>">
+
+    <!-- Open Graph / Facebook -->
+    <meta
+      property="og:type"
+      content="website">
+    <meta
+      property="og:url"
+      content="https://laurentxdubois.com<%= path %>">
+    <meta
+      property="og:title"
+      content="<%= locals.pageTitle || t('common.meta.defaultTitle') %>">
+    <meta
+      property="og:description"
+      content="<%= locals.pageDescription || t('common.meta.defaultDescription') %>">
+    <meta
+      property="og:image"
+      content="https://laurentxdubois.com/img/laurent-profile.jpg">
+    <meta
+      property="og:image:alt"
+      content="<%= t('common.meta.imageAlt') %>">
+    <meta
+      property="og:image:width"
+      content="1200">
+    <meta
+      property="og:image:height"
+      content="630">
+    <meta
+      property="og:locale"
+      content="<%= currentLang === 'fr' ? 'fr_FR' : 'en_US' %>">
+    <meta property="og:site_name" content="Laurent X. Dubois">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta
+      name="twitter:title"
+      content="<%= locals.pageTitle || t('common.meta.defaultTitle') %>">
+    <meta
+      name="twitter:description"
+      content="<%= locals.pageDescription || t('common.meta.defaultDescription') %>">
+    <meta
+      name="twitter:image"
+      content="https://laurentxdubois.com/img/laurent-profile.jpg">
+    <meta
+      name="twitter:image:alt"
+      content="<%= t('common.meta.imageAlt') %>">
+
+    <!-- Pour les articles/blog posts (à conditionner selon le type de page) -->
+    <% if (locals.isArticle) { %>
+      <meta property="article:published_time" content="<%= locals.publishDate %>">
+      <meta property="article:modified_time" content="<%= locals.modifiedDate %>">
+      <meta property="article:author" content="Laurent X. Dubois">
+      <meta property="article:section" content="<%= locals.articleSection %>">
+      <meta property="article:tag" content="<%= locals.articleTags %>">
+      
+      <!-- Override le type pour les articles -->
+      <meta property="og:type" content="article">
+    <% } %>
+
+    <!-- Schema.org for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "<%= locals.isArticle ? 'Article' : 'WebPage' %>",
+      "name": "<%= locals.pageTitle || t('common.meta.defaultTitle') %>",
+      "description": "<%= locals.pageDescription || t('common.meta.defaultDescription') %>",
+      "url": "https://laurentxdubois.com<%= path %>",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://laurentxdubois.com/img/laurent-profile.jpg",
+        "width": "1200",
+        "height": "630"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Laurent X. Dubois Photography",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://laurentxdubois.com/img/laurent-profile.jpg"
+        }
+      }<% if (locals.isArticle) { %>,
+      "articleSection": "<%= locals.articleSection %>",
+      "keywords": "<%= locals.articleTags %>",
+      "datePublished": "<%= locals.publishDate %>",
+      "dateModified": "<%= locals.modifiedDate %>",
+      "author": {
+        "@type": "Person",
+        "name": "Laurent X. Dubois"
+      }
+      <% } %>
+    }
+    </script>
+
 </head>
 
 <body>
