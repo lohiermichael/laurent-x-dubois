@@ -139,6 +139,9 @@ public/img
 public/data
 public/galleries
 
+# SEO
+public/sitemap.xml
+seo/pages-to-index.txt
 
 # Fichiers Laurent 07-2024
 .htaccess

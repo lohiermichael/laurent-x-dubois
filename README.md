@@ -129,6 +129,26 @@ public/galleries/<gallery_name>/
 - Custom email templates
 - Error handling
 
+## 🔍 SEO Features
+
+- **Sitemap Generation**: Automated XML sitemap generation during Docker build
+- **Multi-language Support**: Full French and English content with proper
+hreflang tags
+- **Meta Tags**: Dynamic meta tags and structured data
+- **Semantic HTML**: SEO-optimized markup structure
+
+### Configuring Indexed Pages
+
+The sitemap determines which pages are indexed by search engines. Create
+`pages-to-index.txt` from the example file to control indexing:
+
+```bash
+cp pages-to-index.txt.example pages-to-index.txt
+```
+
+The sitemap is automatically generated during Docker build for both development
+and production environments.
+
 ## 🛠️ Tech Stack
 
 - **Backend**: Node.js, Express
