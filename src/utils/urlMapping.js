@@ -6,7 +6,7 @@
  * English URLs will have '/en/' prefix added automatically
  */
 const staticUrlMappings = {
-  'contactez-nous': 'contact',
+  'contact': 'contact',
   'mode': 'fashion',
   'tests-agence': 'agency-test',
   'editorial': 'editorial',

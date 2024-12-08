@@ -11,7 +11,7 @@ const navigationUrls = {
   projects: { fr: '/projets', en: '/en/projects' },
   agencyTest: { fr: '/tests-agence', en: '/en/agency-test' },
   editorial: { fr: '/editorial', en: '/en/editorial' },
-  contact: { fr: '/contactez-nous', en: '/en/contact' },
+  contact: { fr: '/contact', en: '/en/contact' },
 };
 
 /**

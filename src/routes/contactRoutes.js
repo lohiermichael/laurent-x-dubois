@@ -4,8 +4,8 @@ const contactController = require('../controllers/contactController');
 const validateContact = require('../middleware/validateContactMiddleware');
 
 // French routes
-router.get('/contactez-nous', contactController.renderContactPage);
-router.post('/contactez-nous', validateContact, contactController.handleContactForm);
+router.get('/contact', contactController.renderContactPage);
+router.post('/contact', validateContact, contactController.handleContactForm);
 
 // English routes
 router.get('/en/contact', contactController.renderContactPage);
