@@ -47,6 +47,7 @@ SENDER_GMAIL_USER=your.email@gmail.com
 SENDER_GMAIL_PASSWORD=your_gmail_app_password
 RECIPIENT_EMAIL=recipient@example.com
 GOOGLE_ANALYTICS_MEASUREMENT_ID=your_ga_id
+CLICKY_ANALYTICS_MEASUREMENT_ID=your_clicky_id
 ```
 
 For getting Gmail credentials:
