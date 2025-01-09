@@ -39,7 +39,7 @@ function createEmailTemplate(formData) {
         <title>Nouveau contact</title>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     </head>
-    <body style="margin: 0; padding: 0; background-color: #ffffff; font-family: 'Lato', sans-serif;">
+    <body style="margin: 0; padding: 0; background-color: #ffffff; font-family: "PlayfairDisplay-Regular";">
         <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 10px; margin-top: 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
             <!-- Header -->
             <div style="text-align: center; padding: 20px; background-color: #181818; border-radius: 8px; margin-bottom: 20px;">

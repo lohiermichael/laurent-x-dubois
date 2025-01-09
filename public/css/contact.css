@@ -103,7 +103,7 @@ a {
   display: none;
 }
 .contact-infos-container__text {
-  font-family: "Lato", sans-serif;
+  font-family: "PlayfairDisplay-Regular";
   font-weight: 300;
   font-size: 0.938rem;
   font-weight: 300;
@@ -114,7 +114,7 @@ a {
 .contact-infos-container h1 {
   color: #991e58;
   font-size: 1.75rem;
-  font-family: "Lato", sans-serif;
+  font-family: "PlayfairDisplay-Regular";
   font-weight: 300;
   font-variant: small-caps;
   text-align: left;
@@ -122,7 +122,7 @@ a {
 }
 .contact-infos-container h2 {
   color: #888888;
-  font-family: "Quicksand", sans-serif;
+  font-family: "PlayfairDisplay-Regular";
   font-weight: 100;
   font-size: 1.125rem;
   font-variant: small-caps;
@@ -131,7 +131,7 @@ a {
 }
 .contact-infos-container h3 {
   color: #b3b3b3;
-  font-family: "Lato", sans-serif;
+  font-family: "PlayfairDisplay-Regular";
   font-weight: 300;
   font-size: 0.875rem;
   font-variant: small-caps;
@@ -208,7 +208,7 @@ a {
   width: 8.438rem;
   height: 2.813rem;
   letter-spacing: 0.125px;
-  font-family: "Lato", sans-serif;
+  font-family: "PlayfairDisplay-Regular";
   cursor: pointer;
   color: #F9F9F9;
   background-color: #5a5a5a;

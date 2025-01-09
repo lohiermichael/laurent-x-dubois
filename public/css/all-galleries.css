@@ -97,12 +97,12 @@ a {
   gap: 0.7rem;
 }
 .galleries-list-container .galleries-list .gallery-item {
-  font-family: "Lato", sans-serif;
+  font-family: "PlayfairDisplay-Regular";
   color: #e6e6e6;
   font-weight: 300;
   font-size: 1rem;
   font-variant: small-caps;
-  font-style: italic;
+  /* font-style: italic; */
 }
 .galleries-list-container .galleries-list .gallery-item:hover {
   color: #ca1414;
