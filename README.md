@@ -8,7 +8,7 @@
   width="800"
   style="max-width: 100%;">
 
-[🌐 View Live Website](https://laurentxdubois.com)
+[🌐 View Live Website](https://portfolio.laurentxdubois.com)
 
 A modern photography portfolio website showcasing the work of
 Laurent X. Dubois, professional photographer based in Paris.
