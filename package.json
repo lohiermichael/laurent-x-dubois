@@ -8,7 +8,8 @@
     "start:dev": "nodemon --ext js,json,ejs,html,scss,jpg,png server.js",
     "scss": "sass --watch scss:public/css",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sitemap": "node seo/generate-sitemap.js"
+    "sitemap": "node seo/generate-sitemap.js",
+    "test:mail": "node scripts/test-mail.js"
   },
   "repository": {
     "type": "git",
